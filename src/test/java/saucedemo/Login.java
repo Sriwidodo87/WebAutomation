@@ -119,7 +119,7 @@ public class Login {
         //click login
         driver.findElement(By.xpath("//*[@id=\'login-button\']")).click();
 
-        String error_user = driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3")).getText();
+        String error_user = driver.findElement(By.xpath("//*[contains(text(),'Epic sadface: Sorry, this user has been locked out.')]")).getText();
         Assert.assertEquals(error_user,"Epic sadface: Sorry, this user has been locked out.");
         //quit
         driver.close();
